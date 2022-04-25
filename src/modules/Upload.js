@@ -25,7 +25,7 @@ function Upload() {
       selectedFile.name
     );
     console.log(selectedFile);
-    axios.post("http://64.227.67.48:5000/upload", formData,{
+    axios.post("https://cardanoyield.info/upload", formData,{
       headers: {
         "Content-Type": "multipart/form-data",
       }, onUploadProgress});

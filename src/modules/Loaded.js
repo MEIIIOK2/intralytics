@@ -19,7 +19,7 @@ function Loaded(){
         getloadedFiles()
     },[])
     function getloadedFiles(){
-        axios.get("http://64.227.67.48:5000/").then((resp)=>{setloadedfiles(resp.data);console.log(resp)})
+        axios.get("https://cardanoyield.info/").then((resp)=>{setloadedfiles(resp.data);console.log(resp)})
     }
     function onDownloadProgress(e){
         setDownloaded(Math.round((100 * e.loaded) / e.total))
@@ -32,7 +32,7 @@ function Loaded(){
       }
     function getFileinfo(fname){
         setStatus('Processing by server')
-        axios.post("http://64.227.67.48:5000/file",{filename:fname,nrows:prewsize},{onDownloadProgress}).then(
+        axios.post("https://cardanoyield.info/file",{filename:fname,nrows:prewsize},{onDownloadProgress}).then(
             res => {setrows(res.data.rowdata);
             setcolumns(res.data.columns);console.log(res.data)}
         )

@@ -1,14 +1,14 @@
-import logo from './logo.svg';
+
 import * as XLSX from 'xlsx';
-import './App.css';
+
 import axios from 'axios';
 import React, {useState,useEffect} from 'react';
-import ReadData from './PocessData';
+import ReadData from '../PocessData';
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Loaded from './modules/Loaded';
+import Loaded from './Loaded';
 
-function App() {
+function Upload() {
   const[selectedFile,setFile] = useState(null);
   const [uploaded,setUploaded] = useState(0);
   
@@ -25,7 +25,7 @@ function App() {
       selectedFile.name
     );
     console.log(selectedFile);
-    axios.post("http://127.0.0.1:5000/upload", formData,{
+    axios.post("http://64.227.67.48:5000/upload", formData,{
       headers: {
         "Content-Type": "multipart/form-data",
       }, onUploadProgress});
@@ -72,8 +72,8 @@ function App() {
        <div className='App-header'>
           <input type="file" accept='.csv' onChange={(ev)=>{setFile(ev.target.files[0]);setUploaded(0)}} />
           {fileData()}
-          <h1>Files Loaded:</h1>
-        <Loaded/>
+          
+        
         </div>
         
         
@@ -83,4 +83,4 @@ function App() {
     
 }
 
-export default App;
+export default Upload;

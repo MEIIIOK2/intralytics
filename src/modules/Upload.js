@@ -4,9 +4,10 @@ import * as XLSX from 'xlsx';
 import axios from 'axios';
 import React, {useState,useEffect} from 'react';
 import ReadData from '../PocessData';
-import ProgressBar from 'react-bootstrap/ProgressBar'
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Loaded from './Loaded';
+import { CircularProgress } from '@mui/material';
 
 function Upload() {
   const[selectedFile,setFile] = useState(null);
@@ -27,7 +28,8 @@ function Upload() {
     console.log(selectedFile);
     axios.post("https://cardanoyield.info/upload", formData,{
       headers: {
-        "Content-Type": "multipart/form-data",
+        "Content-Type": "multipart/form-data"
+        
       }, onUploadProgress});
     
   }
@@ -52,7 +54,7 @@ function Upload() {
              <p>File Size: {bytesToSize(selectedFile.size)}</p>
              <div>
               
-             <ProgressBar variant='success' now={uploaded}/>
+             <CircularProgress variant='determinate' value={uploaded} />
         </div>
                           
              

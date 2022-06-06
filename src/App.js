@@ -18,7 +18,7 @@ return (
         <Route exact path='/' element={<Loaded/>} />
         <Route path='/upload' element={<Upload/>} />
         <Route path='/csv' element={<Loaded/>} />
-        <Route path='/blogs' element={<Charts/>} />
+        <Route path='/dashboars' element={<Charts/>} />
         
     </Routes>
     </Router>

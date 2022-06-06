@@ -13,12 +13,10 @@ const Navbar = () => {
           <NavLink to="/csv" activeStyle>
             CSV
           </NavLink>
-          <NavLink to="/blogs" activeStyle>
-            Blogs
+          <NavLink to="/dashboars" activeStyle>
+            Dashboards
           </NavLink>
-          <NavLink to="/sign-up" activeStyle>
-            Sign Up
-          </NavLink>
+          
         </NavMenu>
       </Nav>
     </>

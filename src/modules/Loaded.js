@@ -5,6 +5,7 @@ import { MenuItem } from '@mui/material';
 import { Button } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 import { CircularProgress } from '@mui/material';
+import tableau from "tableau-api";
 
 function Loaded(){
     const [loadedfiles,setloadedfiles] = useState([]);
@@ -17,7 +18,7 @@ function Loaded(){
     const [currtable,setcurrtable] = useState('');
     const [currfile,setCurrfile] = useState('');
 
-
+    
     
     useEffect(()=>{
         getloadedFiles()
@@ -52,6 +53,7 @@ function Loaded(){
     }
     return(
         <div className='csv' >
+            
              <Button variant="contained" className='loadbutton' onClick={getloadedFiles}>Update</Button>
              <br></br>
                 <Select id='setsize' name='sizeselector' value={prewsize} onChange={(e)=>{setprewsize(e.target.value);console.log(e.target.value)}}>
@@ -87,6 +89,7 @@ function Loaded(){
                 </div>
                 <Button variant="contained" style={{height:50, width : "100", left:10}} className='fuck' onClick={()=>{uploadTable(currtable,currfile)}}>Load data</Button>
             </div>
+            
         </div>
     )
      

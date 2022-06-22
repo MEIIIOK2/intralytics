@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Charts() {
   return (
-    <iframe src="https://prod-uk-a.online.tableau.com/t/intralytics/views/Stocks/Sheet1
-?:embed=yes&:tabs=yes&:toolbar=yes" width="800" height="600"></iframe>
+    <iframe src="https://dub01.online.tableau.com/t/hsebi/views/k_pharma/SOTEX
+?:embed=yes&:tabs=yes&:toolbar=yes" width="1800" height="1100"></iframe>
   )
 }
 
